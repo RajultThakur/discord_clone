@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { ThemeProvider } from "@/components/provider/theme-provider"
+import { cn } from '@/lib/utils'
+import { ModalProvider } from '@/components/provider/modal-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -17,7 +20,18 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className,
+        "bg-white dark:bg-[#313338]")}>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ModalProvider/>
+            {children}
+          </ThemeProvider>
+        </body>
     </html>
     </ClerkProvider>
   )
