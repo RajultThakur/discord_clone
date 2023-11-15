@@ -5,6 +5,8 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/provider/theme-provider"
 import { cn } from '@/lib/utils'
 import { ModalProvider } from '@/components/provider/modal-provider'
+import { SocketProvider } from '@/components/provider/socket-provider'
+import { QueryProvider } from '@/components/provider/query-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -28,8 +30,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <SocketProvider>
             <ModalProvider/>
+            <QueryProvider>
             {children}
+            </QueryProvider>
+            </SocketProvider>
           </ThemeProvider>
         </body>
     </html>

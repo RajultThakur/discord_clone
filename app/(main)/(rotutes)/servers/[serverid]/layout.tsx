@@ -11,7 +11,7 @@ const ServerIdLayout = async({
     children :React.ReactNode,
     params : {serverid : string}
 }) => {
-
+    console.log("layout sever id ", params.serverid)
     const profile = await currentProfile();
 
     if(!profile){
