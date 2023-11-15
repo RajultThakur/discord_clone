@@ -18,7 +18,6 @@ export const ChatHeader = ({
     type,
     imageUrl
 } : chatHeaderProps) => {
-    console.log("chat header server id", serverId)
     return (
         <div className="text-md font-semibold flex items-center px-3 h-12 border-neutral-200 dark:border-neutral-800 border-b-2 w-full">
             <MobileToggle serverId={serverId}/>

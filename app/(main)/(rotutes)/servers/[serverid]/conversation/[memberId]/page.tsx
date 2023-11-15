@@ -42,7 +42,6 @@ const MemberIdPage = async ({
 
   const otherMember = memberOne.profileId === profile.id ? memberTwo : memberOne
  
-  console.log("member server id", params?.serverid)
   return (
     <div className="bg-white dark:bg-[#313338] flex flex-col h-full" >
         <ChatHeader

@@ -17,7 +17,6 @@ interface serverSidebarProps {
 }
 
 export const ServerSidebar = async({serverId} : serverSidebarProps) => {
-  console.log("testing server id", serverId)
     const profile = await currentProfile();
     console.log(serverId)
     if(!profile){

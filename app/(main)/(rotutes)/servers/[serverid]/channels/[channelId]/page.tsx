@@ -16,7 +16,6 @@ interface ChannelIdPageProps {
 }
 
 const ChannelIdPage = async ({ params }: ChannelIdPageProps) => {
-  console.log("channel server id", params?.serverid);
   const profile = await currentProfile();
 
   if (!profile) {
